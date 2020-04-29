@@ -16,9 +16,7 @@ collection = db.mars_facts
 @app.route('/scrape')
 def scrape():
     mars = scrape_mars.scrape()
-    print("\n\n\n")
     db.mars_facts.insert_one(mars)
-    return "Some scrapped data"
 
 @app.route("/")
 def home():
