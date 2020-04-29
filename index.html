@@ -26,8 +26,8 @@
 
                 {% for data in mars %} 
                 <div class="container-fluid">
-                    <h2>{{data.news_title}}</h2>
-                    <p>{{data.news_paragraph}}</p>
+                    <h2>{{mars_data.news_title}}</h2>
+                    <p>{{mars_data.news_p}}</p>
                 </div>
 
                 <div class="container-fluid">
@@ -35,20 +35,20 @@
                         <div class="col-md-7">
                             <h3>Featured Image</h3>
                             
-                            <img src="{{data.featured_image}}" alt="featured image" style="width: 80%;">
+                            <img src="{{mars_data.featured_image_url}}" alt="featured image" style="width: 80%;">
 
                         </div>
                         <div class="col-md-5">
                             <ul>
                                 <h3>Current Mars Weather</h3>
-                                {{data.mars_weather}}
+                                {{mars_data.mars_weather}}
                             </ul>
                                 
                                 
                             <ul>
                                 <h3>Mars Facts</h3>
-                                {{data.mars_facts_table|safe}}
-                                <a href="{{data.mars_facts_table}}"></a>
+                                {{mars_data.mars_facts_html|safe}}
+                                <a href="{{mars_data.mars_facts_html}}"></a>
                             </ul>
                         </div>
                     </div>                 
@@ -59,18 +59,18 @@
                     <div class="body">
                     <div class="row">
                         <div class="col-md-6">
-                            {% for hemisphere in data.hemisphere_img_url[0:2] %}
+                            {% for hemisphere in mars_data.hemisphere_image_urls[0:2] %}
                             
-                            <img src="{{hemisphere['image url']}}" alt="hemisphere" style="width:50%;">
+                            <img src="{{mars_data.hemisphere_image_urls}}" alt="hemisphere" style="width:50%;">
                             <div class="caption"style="font-weight: bold;">
                                 {{hemisphere['image title']}}
                             </div>                                           
                             {% endfor %}
                         </div>
                         <div class="col-md-6">
-                            {% for hemisphere in data.hemisphere_img_url[2:4] %}
+                            {% for hemisphere in mars_data.hemisphere_image_urls[2:4] %}
                             
-                            <img src="{{hemisphere['image url']}}" alt="hemisphere" style="width:50%;">
+                            <img src="{{mars_data.hemisphere_image_urls}}" alt="hemisphere" style="width:50%;">
                             <div class="caption" style="font-weight: bold;">
                                 {{hemisphere['image title']}}
                             </div>                                           
